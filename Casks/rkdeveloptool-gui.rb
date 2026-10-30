@@ -11,15 +11,13 @@ cask "rkdeveloptool-gui" do
   desc "Flash Rockchip boards with rkdeveloptool"
   homepage "https://github.com/gahingwoo/RKDevelopTool-GUI"
 
-  auto_updates true
-  depends_on macos: ">= :big_sur"
+  depends_on :macos
 
   app "RKDevelopTool-GUI.app"
 
   # The app isn't notarized yet; without this the first launch is blocked.
-  postflight do
-    system_command "/usr/bin/xattr",
-                   args: ["-dr", "com.apple.quarantine", "#{appdir}/RKDevelopTool-GUI.app"]
+  postflight_steps do
+    run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{appdir}}/RKDevelopTool-GUI.app"]
   end
 
   zap trash: [
