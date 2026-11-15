@@ -1,9 +1,9 @@
 cask "roxora-imager" do
   arch arm: "arm64", intel: "x86_64"
 
-  version "0.1.5"
-  sha256 arm:   "03e41ef42f1ab0802b2daac69427fff67a425fc7ea19892213359161a1bad826",
-         intel: "6e905d6006c8652baadc168181e79128403154b581efe910b6008c6c3f591d70"
+  version "0.1.6"
+  sha256 arm:   "82da6308123b864db7b244cea1342b7d3ad94c5ee7334e08b263a94780034690",
+         intel: "a18063483d90ccc7b3b0bb85fa7bf5d69fccfe2ebb90fb8b6c7d5281aa0ce4c9"
 
   url "https://github.com/roxora-os/imager/releases/download/v#{version}/roxora-imager-#{version}-macos-#{arch}.dmg"
   name "Roxora Imager"
