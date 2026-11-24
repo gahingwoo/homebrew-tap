@@ -10,12 +10,14 @@ cask "roxora-imager" do
   desc "Download, check and write Roxora images for Rockchip boards"
   homepage "https://roxora-os.github.io/roxora-imager/"
 
-  # Betas are GitHub pre-releases, which livecheck skips.
+  # Written by roxora-os/imager's scripts/bump-cask.mjs. Betas are GitHub
+  # pre-releases, which livecheck skips.
   livecheck do
     url :url
     strategy :github_releases
   end
 
+  conflicts_with cask: "roxora-imager@nightly"
   depends_on :macos
 
   app "Roxora Imager.app"
